@@ -1,0 +1,74 @@
+$date
+    Sat Jan 16 00:04:23 2016
+$end
+$version
+    MyHDL 0.9.0
+$end
+$timescale
+    1ns
+$end
+
+$scope module simulate $end
+$var real 1 ! binNum $end
+$var real 1 " clk $end
+$var real 1 # reset $end
+$scope module gen2 $end
+$var real 1 ! binNum $end
+$var real 1 " clk $end
+$var real 1 # reset $end
+$upscope $end
+$scope module gen1 $end
+$var real 1 " clk $end
+$var real 1 # reset $end
+$upscope $end
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+s0x0 !
+s0x0 "
+s0x1 #
+$end
+#10
+s0x1 "
+s0x1 !
+#20
+s0x0 "
+#30
+s0x1 "
+s0x2 !
+#40
+s0x0 "
+#50
+s0x1 "
+s0x3 !
+#60
+s0x0 "
+#70
+s0x1 "
+s0x4 !
+#80
+s0x0 "
+#90
+s0x1 "
+s0x0 #
+s0x0 !
+#100
+s0x1 #
+#110
+s0x0 "
+#120
+s0x1 "
+s0x1 !
+#130
+s0x0 "
+#140
+s0x1 "
+s0x2 !
+#150
+s0x0 "
+#160
+s0x1 "
+s0x3 !
+#170
+s0x0 "
