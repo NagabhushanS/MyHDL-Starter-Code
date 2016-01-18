@@ -1,0 +1,37 @@
+# 8 bit counter and conversion to verilog
+# author: Nagabhushan S Baddi
+
+from myhdl import *
+import sys
+
+def eightBitCounter(count, clock, reset):
+
+    @always(clock.posedge, reset.negedge)
+    def counterLogic():
+        if reset==0:
+            count.next = 0
+        else:
+            count.next = count+1
+            print("At {}, Count: {}".format(now(), bin(count.next)))
+        if count.next==2**8-1:
+            sys.exit(0)
+
+    return counterLogic
+
+def clockGenerator(clock):
+
+    @always(delay(10))
+    def clockLogic():
+        clock.next = not clock
+
+    return clockLogic
+
+
+
+clockS = Signal(bool(0))
+countS = Signal(modbv(0)[8:])
+resetS = Signal(bool(1))
+inst1 = eightBitCounter(countS, clockS, resetS)
+inst2 = clockGenerator(clockS)
+sim = Simulation(inst1, inst2)
+sim.run()
